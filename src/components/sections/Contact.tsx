@@ -22,20 +22,17 @@ export const ContactSection = React.memo(function ContactSection() {
     message: "",
   });
 
-  const handleSubmit = useCallback(
-    async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
       setFormState("loading");
 
       try {
-        const response = await fetch("https://api.web3forms.com/submit", {
+        const response = await fetch("http://localhost:8000/contact", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            access_key:
-              process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "ACCESS_KEY_HERE",
             name: formData.name,
             email: formData.email,
             message: formData.message,
@@ -45,7 +42,7 @@ export const ContactSection = React.memo(function ContactSection() {
 
         const data = await response.json();
 
-        if (data.success) {
+        if (response.ok) {
           setFormState("success");
           setFormData({ name: "", email: "", message: "" });
           setTimeout(() => setFormState("idle"), 5000);
@@ -57,9 +54,7 @@ export const ContactSection = React.memo(function ContactSection() {
         setFormState("error");
         setTimeout(() => setFormState("idle"), 5000);
       }
-    },
-    [formData]
-  );
+    };
 
   return (
     <section id="contact" className="relative overflow-hidden pt-10 pb-20 bg-[#efcedb]/50">
