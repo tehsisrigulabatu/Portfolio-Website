@@ -43,13 +43,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       </head>
       <body
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950 text-slate-50 selection:bg-primary/50 selection:text-primary overflow-x-hidden`}
       >
         <Navbar />
-        <main className="min-h-screen pt-20">{children}</main>
+        <main className="w-full">{children}</main>
         <Footer/>
       </body>
     </html>
