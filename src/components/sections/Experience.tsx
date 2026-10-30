@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 import { PortfolioData } from "@/components/data/portfolio";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -8,7 +8,26 @@ import { motion } from "framer-motion";
 import { SiAlwaysdata } from "react-icons/si";
 import { TbSpeedboatFilled } from "react-icons/tb";
 
+
+
 export const ExperienceSection = React.memo(function ExperienceSection() {
+
+  const [experiences, setExperiences] = useState(PortfolioData.experience);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/skills')
+      .then((res) => {
+        if (!res.ok) throw new Error('Gagal ambil skills');
+        return res.json();
+      })
+      .then((data) => {
+        console.log("Skills fetched from backend:", data);
+      })
+      .catch((err) => {
+        console.warn('API skills mati/Vercel, aman pakai data lokal:', err);
+      });
+  }, []);
+
   return (
     <div className="h-full">
       <SectionHeading

@@ -57,7 +57,7 @@ export const PortfolioData: PortfolioData = {
         },
         {
             platform: "LinkedIn",
-            url: "https://linkedin.com/melodia-nur-insani",
+            url: "https://linkedin.com/in/melodia-nur-insani",
             icon: "Linkedin"
         },
         {
@@ -67,7 +67,7 @@ export const PortfolioData: PortfolioData = {
         },
         {
             platform: "Email",
-            url: "melodiareza70@gmail.com",
+            url: "mailto:melodiareza70@gmail.com",
             icon: "Email"
         },
     ],
