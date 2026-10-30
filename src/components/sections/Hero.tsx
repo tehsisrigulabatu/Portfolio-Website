@@ -21,11 +21,11 @@ export const HeroSection = React.memo(function HeroSection() {
   return (
     <section
       id="about"
-      className="flex flex-col justify-start relative pt-12 md:pt-16 pb-10"
+      className="flex flex-col justify-start relative pt-24 md:pt-30 pb-16 w-full"
     >
       {/* Background Gradients */}
-      <div className="absolute -top-20 -left-20 w-96 h-96 bg-primary rounded-full blur-3xl -z-10 opacity-50" />
-      <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-secondary rounded-full blur-3xl -z-10 opacity-50" />
+      <div className="absolute -top-10 -left-10 w-72 h-72 md:w-96 md:h-96 bg-primary rounded-full blur-3xl -z-10 opacity-50" />
+      <div className="absolute -bottom-10 -right-10 w-72 h-72 md:w-96 md:h-96 bg-secondary rounded-full blur-3xl -z-10 opacity-50" />
 
       <div className="container mx-auto px-4 xl:px-24 z-10">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
@@ -34,12 +34,12 @@ export const HeroSection = React.memo(function HeroSection() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex-1 text-center lg:text-left"
+            className="flex-1 text-center lg:text-left w-full flex flex-col items-center lg:items-start mx-auto"
           >
             <p className="text-secondary font-medium mb-4 tracking-wide">
               Hi, I am
             </p>
-            <h1 className="typing-effect text-5xl md:text-5xl font-bold text-[#48281c] mb-6 bg-gradient-to-r from-[#fb6f92] to-[#ffc2d1] bg-clip-text text-transparent">
+            <h1 className="typing-effect text-4xl sm:text-5xl md:text-5xl font-bold text-[#48281c] mb-6 bg-gradient-to-r from-[#fb6f92] to-[#ffc2d1] bg-clip-text text-transparent">
               {PortfolioData.name}
             </h1>
             <h2 className="text-2xl md:text-1xl text-[#4f2b1f] mb-6 bg-gradient-to-r from-[#4f2b1f] to-[#838f58] bg-clip-text text-transparent font-semibold">
